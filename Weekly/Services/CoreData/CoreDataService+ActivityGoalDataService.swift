@@ -28,6 +28,8 @@ extension CoreDataService: ActivityGoalDataService {
                 type: type
             ))
             
+            try save()
+            
             return Just(model.snapshot)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
@@ -46,6 +48,8 @@ extension CoreDataService: ActivityGoalDataService {
             value.importance = importance
             model.update(with: value)
             
+            try save()
+            
             return Just(model.snapshot)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
@@ -63,6 +67,8 @@ extension CoreDataService: ActivityGoalDataService {
             try value.activityWasCompleted()
             model.update(with: value)
             
+            try save()
+            
             return Just(model.snapshot)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
@@ -79,6 +85,8 @@ extension CoreDataService: ActivityGoalDataService {
             var value = model.snapshot
             try value.activityUncompleted()
             model.update(with: value)
+            
+            try save()
             
             return Just(model.snapshot)
                 .setFailureType(to: Error.self)

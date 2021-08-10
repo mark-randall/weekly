@@ -14,15 +14,12 @@ final class CoreDataService {
     // MARK: - Core Data stack
 
     private lazy var persistentContainer: NSPersistentContainer = {
-        
         let container = NSPersistentContainer(name: "Weekly")
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-            
             container.viewContext.automaticallyMergesChangesFromParent = true
         })
         
@@ -72,6 +69,7 @@ final class CoreDataService {
         predicate: NSPredicate? = nil,
         sortDescriptors: [NSSortDescriptor] = [],
         relationshipKeyPathsForPrefetching: [String]? = nil,
+        limit: Int = Int.max,
         context: NSManagedObjectContext? = nil
     ) throws -> [T] {
         let context = context ?? persistentContainer.viewContext
@@ -81,12 +79,9 @@ final class CoreDataService {
         fetchedRequest.predicate = predicate
         fetchedRequest.sortDescriptors = sortDescriptors
         fetchedRequest.relationshipKeyPathsForPrefetching = relationshipKeyPathsForPrefetching
+        fetchedRequest.fetchLimit = limit
         
-        guard let fetched = try? context.fetch(fetchedRequest) else {
-            throw NSError(domain: "com.mrandall.weekly.coredataservice", code: 500, userInfo: [:])
-        }
-        
-        return fetched
+        return try context.fetch(fetchedRequest)
     }
     
     func fetchFirst<T: NSManagedObject>(
@@ -100,11 +95,14 @@ final class CoreDataService {
             predicate: predicate,
             sortDescriptors: sortDescriptors,
             relationshipKeyPathsForPrefetching: relationshipKeyPathsForPrefetching,
+            limit: 1,
             context: context
         )
         
         guard let first = fetch.first else {
-            throw NSError(domain: "com.mrandall.weekly.coredataservice", code: 404, userInfo: [:])
+            throw NSError(domain: "com.mrandall.weekly.coredataservice", code: 404, userInfo: [
+                NSLocalizedDescriptionKey: "Unable to fetch \(T.self) with predicate \(String(describing: predicate))"
+            ])
         }
         
         return first

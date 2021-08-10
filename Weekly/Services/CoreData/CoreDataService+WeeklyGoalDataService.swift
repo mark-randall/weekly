@@ -27,6 +27,8 @@ extension CoreDataService: WeeklyGoalDataService {
                 activityGoals: activityGoals
             ))
             
+            try save()
+            
             return Just(model.snapshot)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
@@ -35,23 +37,58 @@ extension CoreDataService: WeeklyGoalDataService {
         }
     }
     
-    func fetchWeekGoal(withStartDate startDate: Date) -> AnyPublisher<Entities.WeekGoal, Error> {
-        preconditionFailure()
+    func fetchWeekGoalForCurrentWeek() -> AnyPublisher<Entities.WeekGoal, Error> {
+
+        do {
+            let model: WeekGoal = try fetchFirst(sortDescriptors: [NSSortDescriptor(key: "startDate", ascending: false)])
+
+            return Just(model.snapshot)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        } catch {
+            return Fail<Entities.WeekGoal, Error>(error: error).eraseToAnyPublisher()
+        }
     }
     
-    func updateWeekGoal(withStartDate startDate: Date, addActivityGoals: [Entities.ActivityGoal]) -> AnyPublisher<Entities.WeekGoal, Error> {
-        preconditionFailure()
+    func updateWeekGoal(withId id: String, activityGoals: [Entities.ActivityGoal]) -> AnyPublisher<Entities.WeekGoal, Error> {
+        
+        do {
+            let model: WeekGoal = try fetchFirst(predicate: NSPredicate(format: "id = %@", id))
+            let existingActivityGoals = model.activityGoals
+            let ids = activityGoals.map { $0.id }
+            
+            // Delete any activityGoals not in update
+            let deletedExistingActivityGoals = existingActivityGoals?.filtered(using: NSPredicate(format: "NOT id IN %@", ids))
+            deletedExistingActivityGoals?
+                .compactMap { $0 as? NSManagedObject }
+                .forEach { delete($0) }
+            
+            let newExistingActivityGoals: [ActivityGoal] = try fetch(predicate: NSPredicate(format: "self.id in %@", ids), context: saveContext)
+            model.activityGoals = NSSet(array: newExistingActivityGoals)
+            
+            try save()
+            
+            return Just(model.snapshot)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        } catch {
+            return Fail<Entities.WeekGoal, Error>(error: error).eraseToAnyPublisher()
+        }
     }
     
-    func updateWeekGoal(withStartDate startDate: Date, updateActivityGoals: [Entities.ActivityGoal]) -> AnyPublisher<Entities.WeekGoal, Error> {
-        preconditionFailure()
-    }
-    
-    func updateWeekGoal(withStartDate startDate: Date, deleteActivityGoals: [Entities.ActivityGoal]) -> AnyPublisher<Entities.WeekGoal, Error> {
-        preconditionFailure()
-    }
-    
-    func deleteWeekGoal(withStartDate startDate: Date) -> AnyPublisher<Bool, Error> {
-        preconditionFailure()
+    func deleteWeekGoal(withId id: String) -> AnyPublisher<Bool, Error> {
+        do {
+            let model: WeekGoal = try fetchFirst(predicate: NSPredicate(format: "id = %@", id), context: saveContext)
+                        
+            delete(model)
+            
+            try save()
+            
+            return Just(true)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        } catch {
+            return Fail<Bool, Error>(error: error).eraseToAnyPublisher()
+        }
     }
 }

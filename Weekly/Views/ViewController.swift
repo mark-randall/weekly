@@ -24,6 +24,8 @@ class ViewController: UIViewController {
             coreDataService.createWeekGoal(withStartDate: Date(), activityGoals: [activityGoal])
         }).flatMap({ activityGoal in
             coreDataService.updateActivityGoalAsCompleted(withId: activityGoal.activityGoals.first!.id)
+        }).flatMap({ activityGoal in
+            coreDataService.fetchWeekGoalForCurrentWeek()
         }).sink(receiveCompletion: { error in
             print(error)
         }, receiveValue: { success in

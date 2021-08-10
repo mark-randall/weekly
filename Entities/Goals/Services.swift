@@ -32,15 +32,11 @@ public protocol ActivityGoalDataService: AnyObject {
 
 public protocol WeeklyGoalDataService: AnyObject {
     
-    func createWeekGoal(withStartDate startDate: Date, activityGoals: [ActivityGoal]) -> AnyPublisher<WeekGoal, Error>
+    func createWeekGoal(withStartDate date: Date, activityGoals: [ActivityGoal]) -> AnyPublisher<WeekGoal, Error>
 
-    func fetchWeekGoal(withStartDate startDate: Date) -> AnyPublisher<WeekGoal, Error>
+    func fetchWeekGoalForCurrentWeek() -> AnyPublisher<WeekGoal, Error>
 
-    func updateWeekGoal(withStartDate startDate: Date, addActivityGoals: [ActivityGoal]) -> AnyPublisher<WeekGoal, Error>
+    func updateWeekGoal(withId id: String, activityGoals: [ActivityGoal]) -> AnyPublisher<WeekGoal, Error>
     
-    func updateWeekGoal(withStartDate startDate: Date, updateActivityGoals: [ActivityGoal]) -> AnyPublisher<WeekGoal, Error>
-    
-    func updateWeekGoal(withStartDate startDate: Date, deleteActivityGoals: [ActivityGoal]) -> AnyPublisher<WeekGoal, Error>
-    
-    func deleteWeekGoal(withStartDate startDate: Date) -> AnyPublisher<Bool, Error>
+    func deleteWeekGoal(withId id: String) -> AnyPublisher<Bool, Error>
 }
