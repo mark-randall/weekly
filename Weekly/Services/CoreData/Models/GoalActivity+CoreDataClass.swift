@@ -1,5 +1,5 @@
 //
-//  ActivityGoal+CoreDataClass.swift
+//  GoalActivity+CoreDataClass.swift
 //  Weekly
 //
 //  Created by Mark Randall on 8/10/21.
@@ -10,21 +10,21 @@ import Foundation
 import CoreData
 import Entities
 
-@objc(ActivityGoal)
-public class ActivityGoal: NSManagedObject, EntityModel  {
+@objc(GoalActivity)
+public class GoalActivity: NSManagedObject, EntityModel  {
 
-    public var snapshot: Entities.ActivityGoal {
+    public var snapshot: Entities.GoalActivity {
         
         guard
             let id = self.id,
             let created = self.created,
             let activity = self.activity,
-            let importance = Entities.ActivityGoalImportance(rawValue: Int(importance))
+            let importance = Entities.GoalActivityImportance(rawValue: Int(importance))
         else {
             preconditionFailure("Invalid managed object. Unable to create entity snapshot.")
         }
         
-        return Entities.ActivityGoal(
+        return Entities.GoalActivity(
             id: id,
             created: created,
             lastEdited: lastEdited,
@@ -36,7 +36,7 @@ public class ActivityGoal: NSManagedObject, EntityModel  {
     }
     
     /// Doesn't update relationships
-    public func update(with value: Entities.ActivityGoal) {
+    public func update(with value: Entities.GoalActivity) {
         id = value.id
         created = value.created
         lastEdited = value.lastEdited

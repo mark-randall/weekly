@@ -20,7 +20,7 @@ class AcitivityGoalTests: XCTestCase {
 
     func testActivityWasCompleted_typeIsTask_isCompletedTrue() throws {
         let activity = Activity(id: UUID().uuidString, created: Date(), lastEdited: nil, title: "test")
-        var activityGoal = ActivityGoal(id: UUID().uuidString, created: Date(), lastEdited: nil, activity: activity, importance: .medium, type: .task)
+        var activityGoal = GoalActivity(id: UUID().uuidString, created: Date(), lastEdited: nil, activity: activity, importance: .medium, type: .task)
         
         try activityGoal.activityWasCompleted()
         

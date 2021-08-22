@@ -61,8 +61,8 @@ class CoreDataServiceTests: XCTestCase {
         let service = CoreDataService(persistentContainer: mockPersistantContainer)
 
         let activity = try AwaitPublisherFirst(publisher: service.createActivity(title: "test"))
-        let activityGoal = try AwaitPublisherFirst(publisher: service.createActivityGoal(activity: activity, type: .task, importance: .medium))
-        let updatedActivityGoal = try AwaitPublisherFirst(publisher: service.updateActivityGoalAsCompleted(withId: activityGoal.id))
+        let activityGoal = try AwaitPublisherFirst(publisher: service.createGoalActivity(activity: activity, type: .task, importance: .medium))
+        let updatedActivityGoal = try AwaitPublisherFirst(publisher: service.updateGoalActivityAsCompleted(withId: activityGoal.id))
         
         XCTAssertTrue(updatedActivityGoal.isCompleted)
         XCTAssertEqual(updatedActivityGoal.timesCompleted, 1)

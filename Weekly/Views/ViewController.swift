@@ -19,20 +19,19 @@ class ViewController: UIViewController {
         let coreDataService = CoreDataService()
 
         coreDataService.createActivity(title: "Test").flatMap({ activity in
-            coreDataService.createActivityGoal(activity: activity, type: .task, importance: .high)
+            coreDataService.createGoalActivity(activity: activity, type: .task, importance: .high)
         }).flatMap({ activityGoal in
-            coreDataService.createWeekGoal(withStartDate: Date(), activityGoals: [activityGoal])
+            coreDataService.createObjective(title: "Test", summary: nil).flatMap({ objective in
+                coreDataService.createGoal(withStartDate: Date(), objective: objective, activityGoals: [activityGoal])
+            })
         }).flatMap({ activityGoal in
-            coreDataService.updateActivityGoalAsCompleted(withId: activityGoal.activityGoals.first!.id)
+            coreDataService.updateGoalActivityAsCompleted(withId: activityGoal.activities.first!.id)
         }).flatMap({ activityGoal in
-            coreDataService.fetchWeekGoalForCurrentWeek()
+            coreDataService.fetchActiveGoal()
         }).sink(receiveCompletion: { error in
             print(error)
         }, receiveValue: { success in
             print(success)
         }).store(in: &cancelables)
-        
-        // let goal = Goal(
-        // Do any additional setup after loading the view.
     }
 }

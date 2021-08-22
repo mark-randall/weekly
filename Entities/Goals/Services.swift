@@ -14,29 +14,39 @@ public protocol ActivityDataService: AnyObject {
 
     func fetchActivities() -> AnyPublisher<[Activity], Error>
     
+    func updateObjective(title: String) -> AnyPublisher<Activity, Error>
+    
     func deleteActivity(withId id: String) -> AnyPublisher<Bool, Error>
 }
 
-public protocol ActivityGoalDataService: AnyObject {
+public protocol ObjectiveDataService: AnyObject {
     
-    func createActivityGoal(activity: Activity, type: ActivityGoalType, importance: ActivityGoalImportance) -> AnyPublisher<ActivityGoal, Error>
+    func createObjective(title: String, summary: String?) -> AnyPublisher<Objective, Error>
+
+    func fetchObjectives() -> AnyPublisher<[Objective], Error>
     
-    func updateActivityGoal(withId id: String, type: ActivityGoalType, importance: ActivityGoalImportance) -> AnyPublisher<ActivityGoal, Error>
-    
-    func updateActivityGoalAsCompleted(withId id: String) -> AnyPublisher<ActivityGoal, Error>
-    
-    func updateActivityGoalAsUncompletedCompleted(withId id: String) -> AnyPublisher<ActivityGoal, Error>
-    
-    // Deleting is done with WeeklyGoalDataService's updateWeeklyGoal(withStartDate: Date, deleteActivities: [ActivityGoal])
+    func updateObjective(title: String, summary: String) -> AnyPublisher<Objective, Error>
+
+    func deleteObjective(withId id: String) -> AnyPublisher<Bool, Error>
 }
 
-public protocol WeeklyGoalDataService: AnyObject {
+public protocol GoalDataService: AnyObject {
     
-    func createWeekGoal(withStartDate date: Date, activityGoals: [ActivityGoal]) -> AnyPublisher<WeekGoal, Error>
+    func createGoal(withStartDate date: Date, objective: Objective, activityGoals: [GoalActivity]) -> AnyPublisher<Goal, Error>
 
-    func fetchWeekGoalForCurrentWeek() -> AnyPublisher<WeekGoal, Error>
+    func fetchActiveGoal() -> AnyPublisher<Goal, Error>
 
-    func updateWeekGoal(withId id: String, activityGoals: [ActivityGoal]) -> AnyPublisher<WeekGoal, Error>
+    func updateGoal(withId id: String, activityGoals: [GoalActivity]) -> AnyPublisher<Goal, Error>
     
-    func deleteWeekGoal(withId id: String) -> AnyPublisher<Bool, Error>
+    func deleteGoal(withId id: String) -> AnyPublisher<Bool, Error>
+    
+    func createGoalActivity(activity: Activity, type: GoalActivityType, importance: GoalActivityImportance) -> AnyPublisher<GoalActivity, Error>
+    
+    func updateGoalActivity(withId id: String, type: GoalActivityType, importance: GoalActivityImportance) -> AnyPublisher<GoalActivity, Error>
+    
+    func updateGoalActivityAsCompleted(withId id: String) -> AnyPublisher<GoalActivity, Error>
+    
+    func updateGoalActivityAsUncompletedCompleted(withId id: String) -> AnyPublisher<GoalActivity, Error>
+    
+    // Deleting is done with WeeklyGoalDataService's updateWeeklyGoal(withStartDate: Date, deleteActivities: [ActivityGoal])
 }

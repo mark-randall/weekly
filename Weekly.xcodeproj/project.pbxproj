@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,22 +24,32 @@
 		02C2AA2D265FD53F003E268C /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C2AA08265FD0C8003E268C /* Services.swift */; };
 		4A22CACF26C1A56000273F24 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CACE26C1A56000273F24 /* Activity.swift */; };
 		4A22CAD226C1A87900273F24 /* EntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAD126C1A87900273F24 /* EntityModel.swift */; };
-		4A22CAD426C1A8D400273F24 /* WeekGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAD326C1A8D400273F24 /* WeekGoal.swift */; };
-		4A22CAD626C1AFFF00273F24 /* ActivityGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAD526C1AFFF00273F24 /* ActivityGoal.swift */; };
+		4A22CAD426C1A8D400273F24 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAD326C1A8D400273F24 /* Goal.swift */; };
+		4A22CAD626C1AFFF00273F24 /* GoalActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAD526C1AFFF00273F24 /* GoalActivity.swift */; };
 		4A22CADB26C1BF0A00273F24 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAD726C1BF0200273F24 /* Activity+CoreDataClass.swift */; };
 		4A22CAE226C1BFA800273F24 /* Weekly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAE026C1BFA800273F24 /* Weekly.xcdatamodeld */; };
 		4A22CAE426C1BFBD00273F24 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAE326C1BFBD00273F24 /* Activity+CoreDataProperties.swift */; };
 		4A22CAF026C2D79D00273F24 /* CoreDataService+ActivityDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAEF26C2D79D00273F24 /* CoreDataService+ActivityDataService.swift */; };
-		4A22CAF226C2D90400273F24 /* CoreDataService+ActivityGoalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAF126C2D90400273F24 /* CoreDataService+ActivityGoalDataService.swift */; };
-		4A22CB0026C2E29A00273F24 /* ActivityGoal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAFF26C2E29A00273F24 /* ActivityGoal+CoreDataClass.swift */; };
-		4A22CB0226C2E2D500273F24 /* ActivityGoal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0126C2E2D500273F24 /* ActivityGoal+CoreDataProperties.swift */; };
-		4A22CB0426C2FCB200273F24 /* CoreDataService+WeeklyGoalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0326C2FCB200273F24 /* CoreDataService+WeeklyGoalDataService.swift */; };
-		4A22CB0926C2FE1C00273F24 /* WeekGoal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0626C2FE1C00273F24 /* WeekGoal+CoreDataClass.swift */; };
-		4A22CB0A26C2FE1C00273F24 /* WeekGoal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0726C2FE1C00273F24 /* WeekGoal+CoreDataProperties.swift */; };
+		4A22CB0026C2E29A00273F24 /* GoalActivity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAFF26C2E29A00273F24 /* GoalActivity+CoreDataClass.swift */; };
+		4A22CB0226C2E2D500273F24 /* GoalActivity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0126C2E2D500273F24 /* GoalActivity+CoreDataProperties.swift */; };
+		4A22CB0426C2FCB200273F24 /* CoreDataService+GoalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0326C2FCB200273F24 /* CoreDataService+GoalDataService.swift */; };
+		4A22CB0926C2FE1C00273F24 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0626C2FE1C00273F24 /* Goal+CoreDataClass.swift */; };
+		4A22CB0A26C2FE1C00273F24 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0726C2FE1C00273F24 /* Goal+CoreDataProperties.swift */; };
 		4A22CB0C26C3043100273F24 /* AcitivityGoalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0B26C3043100273F24 /* AcitivityGoalTests.swift */; };
 		4A22CB0E26C3056D00273F24 /* CoreDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB0D26C3056D00273F24 /* CoreDataServiceTests.swift */; };
 		4A22CB1126C30E5200273F24 /* XCTestCase+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB1026C30E5200273F24 /* XCTestCase+Combine.swift */; };
 		4A22CB1226C30F8F00273F24 /* Weekly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CAE026C1BFA800273F24 /* Weekly.xcdatamodeld */; };
+		4A22CB1926C32F7F00273F24 /* CurrentWeekViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB1826C32F7F00273F24 /* CurrentWeekViewModel.swift */; };
+		4A22CB1C26C334C900273F24 /* ReactiveSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A22CB1B26C334C900273F24 /* ReactiveSwift */; };
+		4A22CB1E26C3393300273F24 /* StateUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB1D26C3393300273F24 /* StateUpdate.swift */; };
+		4A22CB2026C3397400273F24 /* CurrentWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB1F26C3397400273F24 /* CurrentWeekViewController.swift */; };
+		4A22CB2726C339D000273F24 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB2526C339D000273F24 /* UIView+AutoLayout.swift */; };
+		4A22CB2826C339D000273F24 /* UIViewController+PresentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB2626C339D000273F24 /* UIViewController+PresentScreen.swift */; };
+		4A22CB2A26C33A6E00273F24 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22CB2926C33A6E00273F24 /* Screen.swift */; };
+		4AC4524E26D13D7400F93D95 /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4524D26D13D7400F93D95 /* Objective.swift */; };
+		4AC4525926D1D59B00F93D95 /* Objective+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4525226D1D59400F93D95 /* Objective+CoreDataClass.swift */; };
+		4AC4525A26D1D59B00F93D95 /* Objective+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4525326D1D59400F93D95 /* Objective+CoreDataProperties.swift */; };
+		4AC4526426D1DFA600F93D95 /* GoalDataService+ObjectiveDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4526326D1DFA600F93D95 /* GoalDataService+ObjectiveDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,21 +129,30 @@
 		02C2AA20265FD531003E268C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A22CACE26C1A56000273F24 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		4A22CAD126C1A87900273F24 /* EntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityModel.swift; sourceTree = "<group>"; };
-		4A22CAD326C1A8D400273F24 /* WeekGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekGoal.swift; sourceTree = "<group>"; };
-		4A22CAD526C1AFFF00273F24 /* ActivityGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityGoal.swift; sourceTree = "<group>"; };
+		4A22CAD326C1A8D400273F24 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		4A22CAD526C1AFFF00273F24 /* GoalActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalActivity.swift; sourceTree = "<group>"; };
 		4A22CAD726C1BF0200273F24 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4A22CAE126C1BFA800273F24 /* Weekly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weekly.xcdatamodel; sourceTree = "<group>"; };
 		4A22CAE326C1BFBD00273F24 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4A22CAEF26C2D79D00273F24 /* CoreDataService+ActivityDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataService+ActivityDataService.swift"; sourceTree = "<group>"; };
-		4A22CAF126C2D90400273F24 /* CoreDataService+ActivityGoalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataService+ActivityGoalDataService.swift"; sourceTree = "<group>"; };
-		4A22CAFF26C2E29A00273F24 /* ActivityGoal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActivityGoal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4A22CB0126C2E2D500273F24 /* ActivityGoal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActivityGoal+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4A22CB0326C2FCB200273F24 /* CoreDataService+WeeklyGoalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataService+WeeklyGoalDataService.swift"; sourceTree = "<group>"; };
-		4A22CB0626C2FE1C00273F24 /* WeekGoal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekGoal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4A22CB0726C2FE1C00273F24 /* WeekGoal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekGoal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4A22CAFF26C2E29A00273F24 /* GoalActivity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoalActivity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4A22CB0126C2E2D500273F24 /* GoalActivity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoalActivity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4A22CB0326C2FCB200273F24 /* CoreDataService+GoalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataService+GoalDataService.swift"; sourceTree = "<group>"; };
+		4A22CB0626C2FE1C00273F24 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4A22CB0726C2FE1C00273F24 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4A22CB0B26C3043100273F24 /* AcitivityGoalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcitivityGoalTests.swift; path = EntitiesTests/AcitivityGoalTests.swift; sourceTree = SOURCE_ROOT; };
 		4A22CB0D26C3056D00273F24 /* CoreDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTests.swift; sourceTree = "<group>"; };
 		4A22CB1026C30E5200273F24 /* XCTestCase+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Combine.swift"; sourceTree = "<group>"; };
+		4A22CB1826C32F7F00273F24 /* CurrentWeekViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeekViewModel.swift; sourceTree = "<group>"; };
+		4A22CB1D26C3393300273F24 /* StateUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateUpdate.swift; sourceTree = "<group>"; };
+		4A22CB1F26C3397400273F24 /* CurrentWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeekViewController.swift; sourceTree = "<group>"; };
+		4A22CB2526C339D000273F24 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		4A22CB2626C339D000273F24 /* UIViewController+PresentScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentScreen.swift"; sourceTree = "<group>"; };
+		4A22CB2926C33A6E00273F24 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		4AC4524D26D13D7400F93D95 /* Objective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
+		4AC4525226D1D59400F93D95 /* Objective+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Objective+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4AC4525326D1D59400F93D95 /* Objective+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Objective+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4AC4526326D1DFA600F93D95 /* GoalDataService+ObjectiveDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoalDataService+ObjectiveDataService.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02C2AA24265FD531003E268C /* Entities.framework in Frameworks */,
+				4A22CB1C26C334C900273F24 /* ReactiveSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,9 +202,9 @@
 			children = (
 				02DF5DAB265FEE7E00782080 /* Models */,
 				02A43698265FE02300E58A03 /* CoreDataService.swift */,
+				4AC4526326D1DFA600F93D95 /* GoalDataService+ObjectiveDataService.swift */,
 				4A22CAEF26C2D79D00273F24 /* CoreDataService+ActivityDataService.swift */,
-				4A22CAF126C2D90400273F24 /* CoreDataService+ActivityGoalDataService.swift */,
-				4A22CB0326C2FCB200273F24 /* CoreDataService+WeeklyGoalDataService.swift */,
+				4A22CB0326C2FCB200273F24 /* CoreDataService+GoalDataService.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -217,7 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				02C2AA05265FCFCF003E268C /* Services */,
+				4A22CB1726C32F5800273F24 /* ViewModels */,
 				02C2AA07265FD014003E268C /* Views */,
+				4A22CB2326C339D000273F24 /* Extensions */,
 				02C2A9D1265FCF6D003E268C /* AppDelegate.swift */,
 				02C2A9D3265FCF6D003E268C /* SceneDelegate.swift */,
 				02C2A9E2265FCF6E003E268C /* Info.plist */,
@@ -256,10 +278,12 @@
 		02C2AA07265FD014003E268C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4A22CB2926C33A6E00273F24 /* Screen.swift */,
 				02C2A9DF265FCF6E003E268C /* LaunchScreen.storyboard */,
 				02C2A9DD265FCF6E003E268C /* Assets.xcassets */,
 				02C2A9D7265FCF6D003E268C /* Main.storyboard */,
 				02C2A9D5265FCF6D003E268C /* ViewController.swift */,
+				4A22CB1F26C3397400273F24 /* CurrentWeekViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,12 +313,14 @@
 			isa = PBXGroup;
 			children = (
 				4A22CAE026C1BFA800273F24 /* Weekly.xcdatamodeld */,
-				4A22CB0126C2E2D500273F24 /* ActivityGoal+CoreDataProperties.swift */,
-				4A22CAFF26C2E29A00273F24 /* ActivityGoal+CoreDataClass.swift */,
+				4AC4525226D1D59400F93D95 /* Objective+CoreDataClass.swift */,
+				4AC4525326D1D59400F93D95 /* Objective+CoreDataProperties.swift */,
+				4A22CB0126C2E2D500273F24 /* GoalActivity+CoreDataProperties.swift */,
+				4A22CAFF26C2E29A00273F24 /* GoalActivity+CoreDataClass.swift */,
 				4A22CAE326C1BFBD00273F24 /* Activity+CoreDataProperties.swift */,
 				4A22CAD726C1BF0200273F24 /* Activity+CoreDataClass.swift */,
-				4A22CB0626C2FE1C00273F24 /* WeekGoal+CoreDataClass.swift */,
-				4A22CB0726C2FE1C00273F24 /* WeekGoal+CoreDataProperties.swift */,
+				4A22CB0626C2FE1C00273F24 /* Goal+CoreDataClass.swift */,
+				4A22CB0726C2FE1C00273F24 /* Goal+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,8 +330,9 @@
 			children = (
 				02C2AA08265FD0C8003E268C /* Services.swift */,
 				4A22CACE26C1A56000273F24 /* Activity.swift */,
-				4A22CAD326C1A8D400273F24 /* WeekGoal.swift */,
-				4A22CAD526C1AFFF00273F24 /* ActivityGoal.swift */,
+				4A22CAD326C1A8D400273F24 /* Goal.swift */,
+				4A22CAD526C1AFFF00273F24 /* GoalActivity.swift */,
+				4AC4524D26D13D7400F93D95 /* Objective.swift */,
 			);
 			path = Goals;
 			sourceTree = "<group>";
@@ -316,6 +343,32 @@
 				4A22CB1026C30E5200273F24 /* XCTestCase+Combine.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A22CB1726C32F5800273F24 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4A22CB1826C32F7F00273F24 /* CurrentWeekViewModel.swift */,
+				4A22CB1D26C3393300273F24 /* StateUpdate.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A22CB2326C339D000273F24 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A22CB2426C339D000273F24 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A22CB2426C339D000273F24 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4A22CB2526C339D000273F24 /* UIView+AutoLayout.swift */,
+				4A22CB2626C339D000273F24 /* UIViewController+PresentScreen.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +400,9 @@
 				02C2AA23265FD531003E268C /* PBXTargetDependency */,
 			);
 			name = Weekly;
+			packageProductDependencies = (
+				4A22CB1B26C334C900273F24 /* ReactiveSwift */,
+			);
 			productName = Weekly;
 			productReference = 02C2A9CE265FCF6D003E268C /* Weekly.app */;
 			productType = "com.apple.product-type.application";
@@ -462,6 +518,9 @@
 				Base,
 			);
 			mainGroup = 02C2A9C5265FCF6D003E268C;
+			packageReferences = (
+				4A22CB1A26C334C900273F24 /* XCRemoteSwiftPackageReference "ReactiveSwift" */,
+			);
 			productRefGroup = 02C2A9CF265FCF6D003E268C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -521,20 +580,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A22CB1E26C3393300273F24 /* StateUpdate.swift in Sources */,
+				4A22CB2726C339D000273F24 /* UIView+AutoLayout.swift in Sources */,
 				4A22CAE426C1BFBD00273F24 /* Activity+CoreDataProperties.swift in Sources */,
 				4A22CADB26C1BF0A00273F24 /* Activity+CoreDataClass.swift in Sources */,
 				02C2A9D6265FCF6D003E268C /* ViewController.swift in Sources */,
 				4A22CAF026C2D79D00273F24 /* CoreDataService+ActivityDataService.swift in Sources */,
-				4A22CB0426C2FCB200273F24 /* CoreDataService+WeeklyGoalDataService.swift in Sources */,
-				4A22CB0026C2E29A00273F24 /* ActivityGoal+CoreDataClass.swift in Sources */,
+				4A22CB0426C2FCB200273F24 /* CoreDataService+GoalDataService.swift in Sources */,
+				4A22CB0026C2E29A00273F24 /* GoalActivity+CoreDataClass.swift in Sources */,
 				4A22CAE226C1BFA800273F24 /* Weekly.xcdatamodeld in Sources */,
+				4A22CB1926C32F7F00273F24 /* CurrentWeekViewModel.swift in Sources */,
+				4AC4525926D1D59B00F93D95 /* Objective+CoreDataClass.swift in Sources */,
 				02A43699265FE02300E58A03 /* CoreDataService.swift in Sources */,
-				4A22CB0926C2FE1C00273F24 /* WeekGoal+CoreDataClass.swift in Sources */,
+				4A22CB2026C3397400273F24 /* CurrentWeekViewController.swift in Sources */,
+				4AC4525A26D1D59B00F93D95 /* Objective+CoreDataProperties.swift in Sources */,
+				4A22CB0926C2FE1C00273F24 /* Goal+CoreDataClass.swift in Sources */,
 				02C2A9D2265FCF6D003E268C /* AppDelegate.swift in Sources */,
-				4A22CB0A26C2FE1C00273F24 /* WeekGoal+CoreDataProperties.swift in Sources */,
+				4A22CB0A26C2FE1C00273F24 /* Goal+CoreDataProperties.swift in Sources */,
 				02C2A9D4265FCF6D003E268C /* SceneDelegate.swift in Sources */,
-				4A22CB0226C2E2D500273F24 /* ActivityGoal+CoreDataProperties.swift in Sources */,
-				4A22CAF226C2D90400273F24 /* CoreDataService+ActivityGoalDataService.swift in Sources */,
+				4AC4526426D1DFA600F93D95 /* GoalDataService+ObjectiveDataService.swift in Sources */,
+				4A22CB0226C2E2D500273F24 /* GoalActivity+CoreDataProperties.swift in Sources */,
+				4A22CB2A26C33A6E00273F24 /* Screen.swift in Sources */,
+				4A22CB2826C339D000273F24 /* UIViewController+PresentScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,8 +631,9 @@
 				4A22CAD226C1A87900273F24 /* EntityModel.swift in Sources */,
 				02C2AA2D265FD53F003E268C /* Services.swift in Sources */,
 				4A22CACF26C1A56000273F24 /* Activity.swift in Sources */,
-				4A22CAD426C1A8D400273F24 /* WeekGoal.swift in Sources */,
-				4A22CAD626C1AFFF00273F24 /* ActivityGoal.swift in Sources */,
+				4AC4524E26D13D7400F93D95 /* Objective.swift in Sources */,
+				4A22CAD426C1A8D400273F24 /* Goal.swift in Sources */,
+				4A22CAD626C1AFFF00273F24 /* GoalActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +820,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Weekly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -771,6 +840,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Weekly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -873,6 +943,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Entities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -899,6 +970,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Entities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1010,6 +1082,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A22CB1A26C334C900273F24 /* XCRemoteSwiftPackageReference "ReactiveSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A22CB1B26C334C900273F24 /* ReactiveSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A22CB1A26C334C900273F24 /* XCRemoteSwiftPackageReference "ReactiveSwift" */;
+			productName = ReactiveSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4A22CAE026C1BFA800273F24 /* Weekly.xcdatamodeld */ = {

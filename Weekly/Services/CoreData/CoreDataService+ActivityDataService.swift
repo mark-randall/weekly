@@ -43,6 +43,10 @@ extension CoreDataService: ActivityDataService {
         }
     }
     
+    func updateObjective(title: String) -> AnyPublisher<Entities.Activity, Error> {
+        preconditionFailure()
+    }
+    
     func deleteActivity(withId id: String) -> AnyPublisher<Bool, Error> {
         
         do {

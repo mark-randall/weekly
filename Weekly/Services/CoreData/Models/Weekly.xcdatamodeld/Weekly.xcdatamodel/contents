@@ -5,28 +5,39 @@
         <attribute name="id" attributeType="String" defaultValueString=""/>
         <attribute name="lastEdited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" attributeType="String" defaultValueString=""/>
-        <relationship name="activityGoals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityGoal" inverseName="activity" inverseEntity="ActivityGoal"/>
+        <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GoalActivity" inverseName="activity" inverseEntity="GoalActivity"/>
     </entity>
-    <entity name="ActivityGoal" representedClassName="ActivityGoal" syncable="YES">
+    <entity name="Goal" representedClassName="Goal" syncable="YES">
+        <attribute name="created" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="lastEdited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="activities" toMany="YES" deletionRule="Cascade" destinationEntity="GoalActivity" inverseName="goal" inverseEntity="GoalActivity"/>
+        <relationship name="objective" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Objective" inverseName="goals" inverseEntity="Objective"/>
+    </entity>
+    <entity name="GoalActivity" representedClassName="GoalActivity" syncable="YES">
         <attribute name="completionGoal" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="created" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="String"/>
         <attribute name="importance" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="lastEdited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="timesCompleted" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="activity" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Activity" inverseName="activityGoals" inverseEntity="Activity"/>
-        <relationship name="week" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeekGoal" inverseName="activityGoals" inverseEntity="WeekGoal"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Activity" inverseName="goals" inverseEntity="Activity"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="activities" inverseEntity="Goal"/>
     </entity>
-    <entity name="WeekGoal" representedClassName="WeekGoal" syncable="YES">
+    <entity name="Objective" representedClassName="Objective" syncable="YES">
         <attribute name="created" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="String"/>
         <attribute name="lastEdited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="activityGoals" toMany="YES" deletionRule="Cascade" destinationEntity="ActivityGoal" inverseName="week" inverseEntity="ActivityGoal"/>
+        <attribute name="summary" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="objective" inverseEntity="Goal"/>
     </entity>
     <elements>
         <element name="Activity" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="ActivityGoal" positionX="-63" positionY="9" width="128" height="149"/>
-        <element name="WeekGoal" positionX="-45" positionY="63" width="128" height="104"/>
+        <element name="GoalActivity" positionX="-63" positionY="9" width="128" height="149"/>
+        <element name="Goal" positionX="-45" positionY="63" width="128" height="134"/>
+        <element name="Objective" positionX="-54" positionY="72" width="128" height="119"/>
     </elements>
 </model>

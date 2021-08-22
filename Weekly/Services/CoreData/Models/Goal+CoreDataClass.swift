@@ -10,30 +10,32 @@ import Foundation
 import CoreData
 import Entities
 
-@objc(WeekGoal)
-public class WeekGoal: NSManagedObject, EntityModel {
+@objc(Goal)
+public class Goal: NSManagedObject, EntityModel {
     
-    public var snapshot: Entities.WeekGoal {
+    public var snapshot: Entities.Goal {
         
         guard
             let id = self.id,
             let created = self.created,
             let startDate = self.startDate,
-            let activityGoals = self.activityGoals as? Set<ActivityGoal>
+            let activityGoals = self.activities as? Set<GoalActivity>,
+            let objective = self.objective
         else {
             preconditionFailure("Invalid managed object. Unable to create entity snapshot.")
         }
         
-        return Entities.WeekGoal(
+        return Entities.Goal(
             id: id,
             created: created,
             lastEdited: lastEdited,
             startDate: startDate,
-            activityGoals: activityGoals.map({ $0.snapshot })
+            objective: objective.snapshot,
+            activities: activityGoals.map({ $0.snapshot })
         )
     }
     
-    public func update(with value: Entities.WeekGoal) {
+    public func update(with value: Entities.Goal) {
         id = value.id
         created = value.created
         lastEdited = value.lastEdited

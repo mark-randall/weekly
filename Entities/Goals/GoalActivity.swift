@@ -7,18 +7,18 @@
 
 import Foundation
 
-public enum ActivityGoalType {
+public enum GoalActivityType {
     case task
     case multiple(Int)
 }
 
-public enum ActivityGoalImportance: Int {
+public enum GoalActivityImportance: Int {
     case low = 1
     case medium = 2
     case high = 3
 }
 
-public struct ActivityGoal: Entity {
+public struct GoalActivity: Entity {
     
     // MARK: - EntityModel
     
@@ -29,8 +29,8 @@ public struct ActivityGoal: Entity {
     // MARK: - Init
     
     public let activity: Activity
-    public var importance: ActivityGoalImportance
-    public var type: ActivityGoalType
+    public var importance: GoalActivityImportance
+    public var type: GoalActivityType
     public var timesCompleted: Int
     
     public init(
@@ -38,8 +38,8 @@ public struct ActivityGoal: Entity {
         created: Date,
         lastEdited: Date?,
         activity: Activity,
-        importance: ActivityGoalImportance = .medium,
-        type: ActivityGoalType = .task,
+        importance: GoalActivityImportance = .medium,
+        type: GoalActivityType = .task,
         timesCompleted: Int = 0
     ) {
         self.id = id

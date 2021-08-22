@@ -11,9 +11,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        guard NSClassFromString("XCTest") == nil else { return }
+        
+        // Create root screen
+        let viewModel = CurrentWeekViewModel()
+        let vc = UIViewController.create(screen: .currentWeek(viewModel: viewModel))
+        let nc = UINavigationController(rootViewController: vc)
+        
+        // Create window and make key
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = nc
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
